@@ -16,14 +16,14 @@ class Queue:
     def dequeue(self) -> int:
         """Удаляет и возвращает первый элемент очереди. Ошибка при пустой очереди."""
         if self.is_empty():
-            raise IndexError("ValueError: Попытка вызвать 'dequeue' при пустой очереди.")
+            raise IndexError("IndexError: Попытка вызвать 'dequeue' при пустой очереди.")
 
         return self._data.pop(0)
 
     def front(self) -> int:
         """Возвращает первый элемент очереди без удаления. Ошибка при пустой очереди."""
         if self.is_empty():
-            raise IndexError("ValueError: Попытка вызвать 'front' при пустой очереди.")
+            raise IndexError("IndexError: Попытка вызвать 'front' при пустой очереди.")
 
         return self._data[0]
 

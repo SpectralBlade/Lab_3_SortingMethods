@@ -15,10 +15,10 @@ class Stack:
         if not self.min_stack or x <= self.min_stack[-1]:
             self.min_stack.append(x)
 
-    def pop(self) -> int | ValueError:
+    def pop(self) -> int:
         """Удаляет и возвращает верхний элемент стека. Ошибка при пустом стеке."""
         if self.is_empty():
-            raise ValueError("ValueError: Попытка вызвать 'pop' при пустом стеке.")
+            raise IndexError("IndexError: Попытка вызвать 'pop' при пустом стеке.")
 
         popped = self.items.pop()
 
@@ -27,10 +27,10 @@ class Stack:
 
         return popped
 
-    def peek(self) -> int | ValueError:
+    def peek(self) -> int:
         """Возвращает верхний элемент стека без удаления. Ошибка при пустом стеке."""
         if self.is_empty():
-            raise ValueError("ValueError: Попытка вызвать 'peek' при пустом стеке.")
+            raise IndexError("IndexError: Попытка вызвать 'peek' при пустом стеке.")
 
         return self.items[-1]
 
@@ -42,9 +42,9 @@ class Stack:
         """Возвращает количество элементов в стеке."""
         return len(self.items)
 
-    def min(self) -> int | ValueError:
+    def min(self) -> int:
         """Возвращает минимальный элемент в стеке. Ошибка при пустом стеке."""
         if self.is_empty():
-            raise ValueError("ValueError: Попытка вызвать 'min' при пустом стеке.")
+            raise IndexError("IndexError: Попытка вызвать 'min' при пустом стеке.")
 
         return self.min_stack[-1]
