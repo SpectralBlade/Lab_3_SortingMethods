@@ -20,6 +20,5 @@ def radix_sort(array: list[int], base: int = 10) -> list[int]:
     while max_val // exp > 0:
         arr = counting_sort_for_radix(arr, exp, base)
         exp *= base
-        print(arr)
 
     return arr
