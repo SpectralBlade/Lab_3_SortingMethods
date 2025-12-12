@@ -10,7 +10,7 @@ def radix_sort(array: list[int], base: int = 10) -> list[int]:
     if not array:
         return []
 
-    if any(x < 0 or float(x) for x in array):
+    if any((not isinstance(x, int)) or x < 0 for x in array):
         raise ValueError('ValueError: Radix sort поддерживает только натуральные числа + 0')
 
     arr = array.copy()
