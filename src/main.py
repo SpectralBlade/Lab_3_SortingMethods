@@ -74,7 +74,7 @@ def main() -> None:
                         try:
                             before = repr(queue)
                             if args:
-                                arg = int(args)
+                                arg = int(args[0])
                                 result = QUEUE_COMMANDS[cmd](queue, arg)
                             else:
                                 result = QUEUE_COMMANDS[cmd](queue)
@@ -95,10 +95,10 @@ def main() -> None:
                         try:
                             before = repr(stack)
                             if args:
-                                arg = int(args)
-                                result = QUEUE_COMMANDS[cmd](queue, arg)
+                                arg = int(args[0])
+                                result = STACK_COMMANDS[cmd](stack, arg)
                             else:
-                                result = QUEUE_COMMANDS[cmd](queue)
+                                result = STACK_COMMANDS[cmd](stack)
 
                             print("Команда выполнена.")
                             print("Стек до:", before)
