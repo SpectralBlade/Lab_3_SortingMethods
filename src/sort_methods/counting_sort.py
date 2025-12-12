@@ -7,7 +7,7 @@ def counting_sort(array: list[int]) -> list[int]:
     if not array:
         return []
 
-    if any(x < 0 or float(x) for x in array):
+    if any((not isinstance(x, int)) or x < 0 for x in array):
         raise ValueError("ValueError: Counting sort поддерживает только натуральные числа + 0")
 
     max_val = max(array)
