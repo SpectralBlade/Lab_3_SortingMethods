@@ -29,7 +29,7 @@ class Queue:
 
     def is_empty(self) -> bool:
         """Возвращает True, если очередь пуста, иначе False."""
-        return len(self._data) == 0
+        return not self._data
 
     def __len__(self) -> int:
         """Возвращает количество элементов в очереди."""

@@ -36,7 +36,7 @@ class Stack:
 
     def is_empty(self) -> bool:
         """Возвращает True, если стек пуст, иначе False."""
-        return self.__len__() == 0
+        return not self.items
 
     def __len__(self) -> int:
         """Возвращает количество элементов в стеке."""
