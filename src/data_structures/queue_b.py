@@ -1,7 +1,9 @@
+from collections import deque
+
 class Queue:
     def __init__(self):
         """Создаёт пустую очередь."""
-        self._data = []
+        self._data = deque()
 
     def __repr__(self):
         """Возвращает строковое представление очереди."""
@@ -18,7 +20,7 @@ class Queue:
         if self.is_empty():
             raise IndexError("IndexError: Попытка вызвать 'dequeue' при пустой очереди.")
 
-        return self._data.pop(0)
+        return self._data.popleft()
 
     def front(self) -> int:
         """Возвращает первый элемент очереди без удаления. Ошибка при пустой очереди."""
